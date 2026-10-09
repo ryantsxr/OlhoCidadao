@@ -1,24 +1,34 @@
-# 👁️ Olho Cidadão
+# Olho Cidadão — MVC
 
-**Tecnologia a serviço da cidadania.**
+Projeto reorganizado no padrão **MVC (Model, View, Controller)** em PHP.
 
-O Olho Cidadão é uma plataforma web desenvolvida com o objetivo de aproximar a população da gestão pública, facilitando o registro, acompanhamento e gerenciamento de problemas urbanos.
+## Estrutura
 
-O sistema permite que cidadãos registrem ocorrências, acompanhem protocolos e visualizem informações sobre as demandas, enquanto administradores podem organizar os atendimentos por meio de um painel de gerenciamento.
+- `app/Controllers/` — regras de controle e fluxo das páginas
+- `app/Models/` — acesso e manipulação dos dados
+- `app/Views/` — HTML das telas
+- `app/Core/` — classes base e roteador
+- `public/` — ponto de entrada, CSS, JavaScript, imagens e uploads
+- `storage/` — arquivos JSON usados como armazenamento
 
-### 🚀 Principais funcionalidades
-- Registro e acompanhamento de denúncias urbanas.
-- Protocolos individuais e relatórios.
-- Mapa interativo de ocorrências.
-- Painel administrativo com Kanban.
-- Estatísticas e transparência pública.
-- Sistema de autenticação e controle de acesso.
-- Recursos de acessibilidade.
+## Como executar no XAMPP/Apache
 
-### 💻 Tecnologias
-PHP • JavaScript • HTML • CSS • Arquitetura MVC
+1. Mantenha a pasta `OlhoCidadao_MVC` dentro de `htdocs/OlhoCidadao`.
+2. Confirme que o Apache está ligado.
+3. Acesse:
 
-### 🎓 Sobre o projeto
-Desenvolvido no Instituto Federal de Rondônia (IFRO), Campus Guajará-Mirim, como projeto acadêmico com potencial de aplicação na administração pública municipal.
+   `http://localhost/OlhoCidadao/OlhoCidadao_MVC/`
 
-**Status:** Em desenvolvimento e aperfeiçoamento. Projeto acadêmico independente, ainda não adotado oficialmente por uma prefeitura.
+O `.htaccess` da raiz já encaminha as requisições para `public/index.php` e os arquivos estáticos para `public/`.
+
+## Importante
+
+Não é necessário acessar diretamente `public/index.php`. O projeto pode ser acessado pela pasta raiz.
+
+O sistema também pode ser executado com o servidor embutido do PHP:
+
+```bash
+php -S localhost:8000 -t public
+```
+
+Nesse caso, acesse `http://localhost:8000/`.

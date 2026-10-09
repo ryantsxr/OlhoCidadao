@@ -1,0 +1,15 @@
+RewriteEngine On
+
+# Impede acesso direto ao código da aplicação e aos dados persistidos.
+RewriteRule ^(app|storage)(/|$) - [F,L]
+Options -Indexes
+
+# Evita que as regras sejam reaplicadas quando o Apache entrar na pasta public.
+RewriteRule ^public/ - [L]
+
+# Arquivos estáticos: encaminha para public sem expor a estrutura no navegador.
+RewriteRule ^(css|js|img|uploads)/(.*)$ public/$1/$2 [L]
+
+# Tudo que não for arquivo/pasta real passa pelo front controller.
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^ public/index.php [L,QSA]

@@ -1,0 +1,10 @@
+app/config.local.php
+vendor/
+storage/integridade.key
+
+storage/.cpf.key
+storage/backups/
+storage/logs/
+storage/.lock_*
+storage/.totp.key
+storage/*.tmp
